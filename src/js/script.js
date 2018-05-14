@@ -40,30 +40,36 @@ const keto = {
       stats: this.user.day.breakfast,
     };
     breakfast.el.html(
-      `Proteins: <b class="protein-color">${breakfast.stats.protein}</b> 
-      Carbs: <b class="carbs-color">${breakfast.stats.carbs}</b>  
-      Fats: <b class="fats-color">${breakfast.stats.fats}</b>`);
+      `Proteins: <b class="protein-color">${(breakfast.stats.protein).toFixed(1)}</b> 
+      Carbs: <b class="carbs-color">${(breakfast.stats.carbs).toFixed(1)}</b>  
+      Fats: <b class="fats-color">${(breakfast.stats.fats).toFixed(1)}</b>`);
     const lunch = {
       el: $day.find('.plate-lunch-totals'),
       stats: this.user.day.lunch,
     };
     lunch.el.html(
-      `Proteins: <b class="protein-color">${lunch.stats.protein}</b>  
-      Carbs: <b class="carbs-color">${lunch.stats.carbs}</b>  
-      Fats: <b class="fats-color">${lunch.stats.fats}</b>`);
+      `Proteins: <b class="protein-color">${(lunch.stats.protein).toFixed(1)}</b>  
+      Carbs: <b class="carbs-color">${(lunch.stats.carbs).toFixed(1)}</b>  
+      Fats: <b class="fats-color">${(lunch.stats.fats).toFixed(1)}</b>`);
     const dinner = {
       el: $day.find('.plate-dinner-totals'),
       stats: this.user.day.dinner,
     };
     dinner.el.html(
-      `Proteins: <b class="protein-color">${dinner.stats.protein}</b>  
-      Carbs: <b class="carbs-color">${dinner.stats.carbs}</b> 
-      Fats: <b class="fats-color">${dinner.stats.fats}</b>`);
+      `Proteins: <b class="protein-color">${(dinner.stats.protein).toFixed(1)}</b>  
+      Carbs: <b class="carbs-color">${(dinner.stats.carbs).toFixed(1)}</b> 
+      Fats: <b class="fats-color">${(dinner.stats.fats).toFixed(1)}</b>`);
     // add totals
     $('.food-day-total').html(`
-      Protein: <b class="protein-color">${breakfast.stats.protein + lunch.stats.protein + dinner.stats.protein}</b>  
-      Carbs: <b class="carbs-color">${breakfast.stats.carbs + lunch.stats.carbs + dinner.stats.carbs}</b> 
-      Fats: <b class="fats-color">${breakfast.stats.fats + lunch.stats.fats + dinner.stats.fats}</b>`);
+      Protein: <b class="protein-color">
+        ${(breakfast.stats.protein + lunch.stats.protein + dinner.stats.protein).toFixed(1)}
+      </b>  
+      Carbs: <b class="carbs-color">
+        ${(breakfast.stats.carbs + lunch.stats.carbs + dinner.stats.carbs).toFixed(1)}
+      </b> 
+      Fats: <b class="fats-color">
+        ${(breakfast.stats.fats + lunch.stats.fats + dinner.stats.fats).toFixed(1)}
+      </b>`);
   },
   drake: dragula({
     copy: true,

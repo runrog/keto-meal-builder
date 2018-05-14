@@ -184,7 +184,7 @@
     },
     {
       "type": "dairy",
-      "food": "butter",
+      "food": "butter (Ghee)",
       "serving": 1,
       "servingUnit": "tea spoon",
       "brand": "Ghee",
@@ -212,7 +212,7 @@
     },
     {
       "type": "dairy",
-      "food": "butter",
+      "food": "butter (Kerry)",
       "serving": 1,
       "servingUnit": "tea spoon",
       "brand": "Kerry Gold",
