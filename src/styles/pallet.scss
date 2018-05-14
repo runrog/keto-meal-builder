@@ -1,0 +1,168 @@
+#food-pallet {
+  @include clear-fix;
+  margin: 0 auto;
+  width: 80%;
+}
+
+@mixin pallet {
+  float: left;
+  padding: 10px;
+  width: 20%;
+}
+
+.food-pallet-meat {
+  @include pallet;
+}
+
+.food-pallet-dairy {
+  @include pallet;
+}
+
+.food-pallet-oils {
+  @include pallet;
+}
+
+.food-pallet-vegetable {
+  @include pallet;
+}
+
+.food-pallet-fruit {
+  @include pallet;
+}
+
+.food-pallet-item {
+  background-color: #fbffff;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  
+  &:hover {
+    cursor: -webkit-grab;
+  }
+}
+
+@mixin mini-stat {
+  font-size: 8pt;
+}
+
+.food-item-protein {
+  @include mini-stat;
+  color: $protein;
+}
+
+.food-item-carbs {
+  @include mini-stat;
+  color: $carbs;
+}
+
+.food-item-fats {
+  @include mini-stat;
+  color: $fats;
+}
+
+.food-item-remove {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  position: absolute;
+  right: 3px;
+  text-decoration: none;
+  top: -3px;
+}
+
+.food-per-day {
+  @include clear-fix;
+}
+
+@mixin plate-container {
+  float: left;
+  padding: 10px;
+  width: 33.3333%;  
+}
+
+.plate-breakfast-container {
+  @include plate-container;
+}
+
+.plate-lunch-container {
+  @include plate-container;
+}
+
+.plate-dinner-container {
+  @include plate-container;
+}
+
+.food-day-total {
+  font-size: 20pt;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+// plates
+@mixin plate {
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  // box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.28);
+  padding: 10px;
+  padding-top: 30px;
+  position: relative;
+  transition-duration: .2s;
+  width: 100%;
+  
+  &:before {
+    color: rgba(0, 0, 0, .45);
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 3px;
+  }
+  
+  .food-pallet-item {
+    &:hover {
+      .food-item-remove {
+        opacity: 1;
+      }
+    }  
+  }
+}
+
+.plate-breakfast {
+  @include plate;
+  &:before {
+    content: 'Breakfast';
+  }
+}
+
+.plate-lunch {
+  @include plate;
+
+  &:before {
+    content: 'Lunch';
+  }
+}
+
+.plate-dinner {
+  @include plate;
+  
+  &:before {
+    content: 'Dinner';
+  }
+}
+
+
+.plate-breakfast-totals {
+  margin-bottom: 10px;
+}
+
+.plate-lunch-totals {
+  margin-bottom: 10px;
+}
+
+.plate-dinner-totals {
+  margin-bottom: 10px;
+}

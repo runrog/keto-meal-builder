@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-$baseColor: #eee;
-$fadeBase: rgba($baseColor, 0.2);
-$darkenBase: darken($baseColor, 20%);
+@import 'src/styles/vars';
+@import 'src/styles/mixins';
+@import 'src/styles/pallet';
 $bodyFont: 'Roboto', sans-serif;
 $desktop: 'only screen and (min-width : 993px)';
 $tablet: 'only screen and (min-width:601px) and (max-width:992px)';
@@ -19,18 +19,40 @@ body {
   text-align: center;
 }
 
-@mixin clear-fix() {
-  &:after {
-   clear: both;
-   content: '';
-   display: table;
- }
+.top-legend-protein {
+  color: $protein;
+}
 
- &:before {
-   clear: both;
-   content: '';
-   display: table;
- }
+.top-legend-carbs {
+  color: $carbs;
+}
+
+.top-legend-fats {
+  color: $fats;
+}
+
+.protein-color {
+  color: $protein;
+}
+
+.carbs-color {
+  color: $carbs;
+}
+
+.fats-color {
+  color: $fats;
+}
+
+.top-food-groups {
+  @include clear-fix;
+  margin: 20px auto 0;
+  width: 80%;
+}
+
+.top-fg-label {
+  float: left;
+  text-align: center;
+  width: 20%;
 }
 
 @media #{$mobile} {

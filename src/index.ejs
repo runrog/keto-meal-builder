@@ -4,20 +4,49 @@
     <% var env, path = '', script = 'js/app.min.js';%>
     <% if (env === 'dev') { path = 'dist/'; script = 'dist/js/app.js'; } %>
     <meta charset="utf-8">
-    <title>Node + EJS + SCSS boilerplate</title>
+    <title>Keto Meal Builder</title>
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/dragula/dist/dragula.min.css">
     <link rel="stylesheet" type="text/css" href="<%- path %>css/main.min.css">
   </head>
   <body>
-      <% include partials/header %>
-      <p>Node JS</p>
-      <p>EJS</p>
-      <p>SASS</p>
-      <p>Gulp</p>
-      <p>BrowserSync</p>
-      <p>ES6/Babel</p>
-      <p>Karma / Mocha / Chai</p>
+      <div class="top-legend">
+        <span class="top-legend-protein">Protein</span>
+        <span class="top-legend-carbs">Carbs</span>
+        <span class="top-legend-fats">Fats</span>
+      </div>
+      <div class="top-food-groups">
+        <div class="top-fg-label">Meats</div>
+        <div class="top-fg-label">Dairy</div>
+        <div class="top-fg-label">Oils</div>
+        <div class="top-fg-label">Fruits</div>
+        <div class="top-fg-label">Vegetabls</div>
+      </div>
+      <div id="food-pallet">
+        <!-- this data comes from json -->
+        <div class="food-pallet-meat"></div>
+        <div class="food-pallet-dairy"></div>
+        <div class="food-pallet-oils"></div>
+        <div class="food-pallet-fruit"></div>
+        <div class="food-pallet-vegetable"></div>
+      </div>
+      <div class="food-day-total"></div>
+      <div class="food-per-day">
+        <div class="plate-breakfast-container">
+          <div class="plate-breakfast-totals">Proteins: 0 Carbs: 0 Fats: 0</div>
+          <div data-meal="breakfast" class="plate-breakfast"></div>
+        </div>
+        <div class="plate-lunch-container">
+          <div class="plate-lunch-totals">Proteins: 0 Carbs: 0 Fats: 0</div>
+          <div data-meal="lunch" class="plate-lunch"></div>
+        </div>
+        <div class="plate-dinner-container">
+          <div class="plate-dinner-totals">Proteins: 0 Carbs: 0 Fats: 0</div>
+          <div data-meal="dinner" class="plate-dinner"></div>  
+        </div>
+      </div>
       <script src="<%- path %>js/modules/jquery.min.js"></script>
+      <script src="<%- path %>js/modules/dragula.min.js"></script>
       <script src="<%- script %>" charset="utf-8"></script>
   </body>
 </html>
