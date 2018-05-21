@@ -40,10 +40,14 @@
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-  
+
   &:hover {
     cursor: -webkit-grab;
   }
+}
+
+.food-item-name {
+  font-size: 10pt;
 }
 
 @mixin mini-stat {
@@ -81,7 +85,7 @@
 @mixin plate-container {
   float: left;
   padding: 10px;
-  width: 33.3333%;  
+  width: 33.3333%;
 }
 
 .plate-breakfast-container {
@@ -112,7 +116,7 @@
   position: relative;
   transition-duration: .2s;
   width: 100%;
-  
+
   &:before {
     color: rgba(0, 0, 0, .45);
     left: 0;
@@ -121,13 +125,13 @@
     right: 0;
     top: 3px;
   }
-  
+
   .food-pallet-item {
     &:hover {
       .food-item-remove {
         opacity: 1;
       }
-    }  
+    }
   }
 }
 
@@ -148,7 +152,7 @@
 
 .plate-dinner {
   @include plate;
-  
+
   &:before {
     content: 'Dinner';
   }
